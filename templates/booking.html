@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Passenger Booking | Flight Management System</title>
+ 
+ 
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+    <script src="../static/js/jquery-3.2.0.js"></script>
+    <script src="../static/js/booking.js"></script>
+ 
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="index.html">Home</a>
+                    </li>
+                    <li role="presentation"><a href="flight.html">Flights</a>
+                    </li>
+                    <li role="presentation"><a href="booking.html">Booking</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Passenger Details</h3>
+        </div>
+  
+        <div class="row marketing">
+            <div class="col-lg-6">
+                <form class="form-booking" method="POST">
+                    <label for="firstName">First name</label><br>
+                      <input type="text" name="firstname"><br>
+                    <label for="lastName">Last name</label><br>
+                      <input type="text" name="lastname"><br>
+                    <label for="email">E-mail Address</label><br>
+                      <input type="text" name="email"><br>
+                    <label for="gender">Gender</label><br>
+                      <input type="radio" name="gender" value="male" checked> Male<br>
+                      <input type="radio" name="gender" value="female"> Female<br>
+                      <input type="radio" name="gender" value="other"> Other<br>
+                    <label for="dob">Date of Birth</label><br>
+                      <select name="date">
+                      {% for d in date %} 
+                        <option value="{{ d.date }}">{{ d.date }}</option>
+                      {% endfor %}
+                      </select>
+                      <select name="month">
+                      {% for m in month %}
+                        <option value="{{ m.mon }}">{{ m.mon }} </option>
+                      {% endfor %}
+                      </select>
+                      <select name="year">
+                    {% for y in year %}
+                        <option value="{{ y.yr }}">{{ y.yr }}</option>
+                    {% endfor %}
+                    </select>
+            </div>
+            <div class="col-lg-6">
+                    <label for="phone">Phone Number</label><br>
+                      <input type="text" name="phone-number"><br><br>  
+                    <label for="address">Residential Address</label><br> 
+                    <label for="firstLine">First Line</label><br>
+                      <input type="text" name="firstLine"><br>
+                    <label for="secondLine">Second Line</label><br>
+                      <input type="text" name="secondLine"><br>
+                    <label for="state">State</label><br>
+                      <input type="text" name="state"><br>
+            </form>      
+            </div>
+          </div>
+        <input type="submit" value="Submit">
+        <footer class="footer">
+            <p>COE 317 Information System and Data Management Lab Project</p>
+        </footer>
+ 
+    </div>
+</body>
+ 
+</html>

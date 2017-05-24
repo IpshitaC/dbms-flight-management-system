@@ -1,2 +1,2 @@
-# dbms-flight-management-system
-6th sem dbms proj
+# flight-management-system
+DBMS project for flight management system
